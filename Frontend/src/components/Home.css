@@ -1,0 +1,180 @@
+/* Base styles for both desktop and mobile */
+.home-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  background-image: url('/src/images/HomePage.jpg'); /* Ensure the path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.home-container.slide-out {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1;
+}
+
+.logo-container {
+  margin-top: 250px;
+}
+
+.logo {
+  width: 175px;
+  height: auto;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-signin, .btn-signup {
+  padding: 10px 40px;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-signin {
+  background-color: #e6e6e6a4;
+  color: #ad2521;
+}
+
+.btn-signin:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.05);
+}
+
+.btn-signin:active {
+  background-color: #e6e6e6;
+  transform: scale(0.95);
+}
+
+.btn-signup {
+  background-color: #e6e6e6a4;
+  color: #ad2521;
+}
+
+.btn-signup:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.05);
+}
+
+.btn-signup:active {
+  background-color: #e6e6e6;
+  transform: scale(0.95);
+}
+
+/* Language switcher positioned in the top-right corner */
+.language-switcher {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.language-switcher button {
+  background-color: transparent;
+  color: #ad2521;
+  border: 2px solid #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher button:hover {
+  background-color: #e6e6e6;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .home-container {
+    background-position: top center;
+    background-size: cover;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .home-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-container p {
+    font-size: 1.5rem;
+  }
+
+  .btn-signin, .btn-signup {
+    font-size: 1.5rem;
+    padding: 8px 30px;
+  }
+
+  .language-switcher {
+    right: 10px;
+  }
+}
+
+/* Very small devices like phones in portrait */
+@media (max-width: 480px) {
+  .home-container {
+    background-size: cover;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .home-container h1 {
+    font-size: 2rem;
+  }
+
+  .home-container p {
+    font-size: 1.2rem;
+  }
+
+  .btn-signin, .btn-signup {
+    font-size: 1rem;
+    padding: 6px 20px;
+  }
+
+  .language-switcher {
+    top: 5px;
+    right: 5px;
+  }
+
+  .language-switcher button {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+}
